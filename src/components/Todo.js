@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import classes from "./Todo.module.css";
 
@@ -16,7 +16,8 @@ const Todo = (props) => {
     <div className={classes.container}>
       {edit ? (
         <span>
-          <input value={text} onChange={updateHandler}></input>
+          <input value={text} onInput={updateHandler}></input>
+
           <Button
             btnStyle={classes.btnStyleMark}
             clickEvent={() => editTodo(index, text, setEdit)}
@@ -26,7 +27,7 @@ const Todo = (props) => {
         </span>
       ) : (
         <p style={{ textDecoration: todo.isDone ? "line-through" : "" }}>
-          {props.todo.text}
+          {todo.text}
         </p>
       )}
 
@@ -43,6 +44,7 @@ const Todo = (props) => {
         <Button
           btnStyle={classes.btnStyleMark}
           clickEvent={() => {
+            setText(todo.text);
             setEdit(true);
           }}
         >

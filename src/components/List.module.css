@@ -2,3 +2,64 @@
   width: 80%;
   margin: 10px auto;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: aqua;
+  font-size: 20px;
+  padding: 20px 10px;
+  margin: 15px 0;
+  background-color: rgb(55, 55, 55);
+  min-width: 250px;
+}
+
+.container p {
+  margin: 10px 0;
+}
+.container input {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  font-size: 20px;
+}
+
+.btnContainer > * {
+  font-size: 20px;
+  outline: none;
+}
+
+.btnStyleMark {
+  font-size: 20px;
+  outline: none;
+}
+
+.btnStyleDelete:hover {
+  background-color: red;
+  border-color: red;
+  color: aliceblue;
+}
+
+.btnStyleMark:hover {
+  border-color: aqua;
+  background-color: aqua;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btnContainer {
+    width: 80%;
+    padding: 20px 10px;
+    margin: 15px 0;
+  }
+}

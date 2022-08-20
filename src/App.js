@@ -45,11 +45,15 @@ function App() {
   };
 
   const editTodo = (index, text, setEdit) => {
-    const newTodos = [...list];
-    newTodos[index].text = text;
-    newTodos[index].isDone = false;
-    setEdit(false);
-    setList(newTodos);
+    if (text.trim() === "") {
+      alert("input cannot be empty");
+    } else {
+      const newTodos = [...list];
+      newTodos[index].text = text;
+      newTodos[index].isDone = false;
+      setEdit(false);
+      setList(newTodos);
+    }
   };
 
   return (
